@@ -12,18 +12,18 @@
 	<div id="app" class='container mt-5'>
 		<div class="d-flex">
 			<div class="mx-2">
-				<select class="form-select" aria-label="Default select example">
+				<select class="form-select" aria-label="Default select example" v-model="category_selected">
 					<option selected>Category</option>
-					<option value="1">Telsa</option>
-					<option value="2">Porsche</option>
-					<option value="3">Toyota</option>
-					<option value="4">Honda</option>
-					<option value="5">Mazda</option>
-					<option value="6">Mercedes-Benz</option>
-					<option value="7">Lexus</option>
-					<option value="8">Lamborghini</option>
-					<option value="9">Audi</option>
-					<option value="10">BMW</option>
+					<option v-bind:value="Tesla">Telsa</option>
+					<option v-bind:value="Porsche">Porsche</option>
+					<option v-bind:value="Toyota">Toyota</option>
+					<option v-bind:value="Honda">Honda</option>
+					<option v-bind:value="Mazda">Mazda</option>
+					<option v-bind:value="Mercedes-Benz">Mercedes-Benz</option>
+					<option v-bind:value="Lexus">Lexus</option>
+					<option v-bind:value="Lamborghini">Lamborghini</option>
+					<option v-bind:value="Audi">Audi</option>
+					<option v-bind:value="BMW">BMW</option>
 				</select>
 			</div>
 			<div>
@@ -35,14 +35,15 @@
 				</select>
 			</div>
 		</div>
-		<div class="d-flex flex-wrap pt-4">
-			<item-card 
+		<div id="app" class="d-flex flex-wrap pt-4">
+			<item-card
 				v-for="item in items"
-				v-bind: img="item.img"
-				v-bind: carName="item.carName"
-				v-bind: category="item.category"
-				v-bind: price="item.price"
-				v-bind: data="item.date"
+				v-bind:key="item.id"
+				v-bind:img="item.img"
+				v-bind:model="item.model"
+				v-bind:category="item.category"
+				v-bind:price="item.price"
+				v-bind:date="item.date"
 			></item-card>
 		</div>
 	</div>
