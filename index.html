@@ -12,32 +12,32 @@
 	<div id="app" class='container mt-5'>
 		<div class="d-flex">
 			<div class="mx-2">
-				<select class="form-select" aria-label="Default select example" v-model="category_selected">
+				<select class="form-select" aria-label="Default select example" v-model="selectedCategory">
 					<option selected>Category</option>
-					<option v-bind:value="Tesla">Telsa</option>
-					<option v-bind:value="Porsche">Porsche</option>
-					<option v-bind:value="Toyota">Toyota</option>
-					<option v-bind:value="Honda">Honda</option>
-					<option v-bind:value="Mazda">Mazda</option>
-					<option v-bind:value="Mercedes-Benz">Mercedes-Benz</option>
-					<option v-bind:value="Lexus">Lexus</option>
-					<option v-bind:value="Lamborghini">Lamborghini</option>
-					<option v-bind:value="Audi">Audi</option>
-					<option v-bind:value="BMW">BMW</option>
+					<option value="Tesla">Telsa</option>
+					<option value="Porsche">Porsche</option>
+					<option value="Toyota">Toyota</option>
+					<option value="Honda">Honda</option>
+					<option value="Mazda">Mazda</option>
+					<option value="Mercedes-Benz">Mercedes-Benz</option>
+					<option value="Lexus">Lexus</option>
+					<option value="Lamborghini">Lamborghini</option>
+					<option value="Audi">Audi</option>
+					<option value="BMW">BMW</option>
 				</select>
 			</div>
 			<div>
-				<select class="form-select" aria-label="Default select example">
+				<select class="form-select" aria-label="Default select example" v-model="selectedSortType">
 					<option selected>Sort by:</option>
-					<option value="1">Price: Low to High</option>
-					<option value="2">Price: High to Low</option>
-					<option value="3">Newest Arrivals</option>
+					<option value="Low to High">Price: Low to High</option>
+					<option value="High to Low">Price: High to Low</option>
+					<option value="Newest Arrivals">Newest Arrivals</option>
 				</select>
 			</div>
 		</div>
-		<div id="app" class="d-flex flex-wrap pt-4">
+		<div class="d-flex flex-wrap pt-4">
 			<item-card
-				v-for="item in items"
+				v-for="item in getViewItems"
 				v-bind:key="item.id"
 				v-bind:img="item.img"
 				v-bind:model="item.model"
